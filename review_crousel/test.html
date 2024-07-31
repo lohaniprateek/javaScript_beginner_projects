@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      .container {
+        height: 400px;
+        width: 300px;
+        background: #a8a8a8;
+        display: flex;
+        flex-direction: column;
+      }
+      img {
+        height: 150px;
+        width: 280px;
+        margin: 10px;
+      }
+      .name {
+        font-size: 30px;
+        margin-left: 20px;
+        margin-top: -50px;
+        color: beige;
+      }
+      .note {
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="./1.jpg" alt="" />
+      <div class="name">Aman</div>
+      <div class="note">B.com graduate boy out of delhi works hard in MOD etc etc......</div>
+      <button class="forward">-/-></button>
+      <button class="backward"><--</button>
+    </div>
+
+    <script type="text/javascript">
+
+
+      const team =[{
+        name: "Aman",
+        img: "1.jpg",
+        note: "B.com graduate boy out of delhi works hard in MOD etc etc......",
+      },{
+        name: "Prateek",
+        img: "2.jpg",
+        note: "B.tech graduate boy out of delhi works hard for learing  etc etc......",
+      },{
+        name: "Dekhi",
+        img: "3.jpg",
+        note: "A city  and capital of india etc etc......",
+      },{
+        name: "McGregor",
+        img: "4.jpg",
+        note: "boy out of dulin, irland a professional fightor etc etc......",
+      },{
+        name: "Girl",
+        img: "5.jpg",
+        note: "girl in the photo is cute and looks like she wants to learn martial arts etc etc......",
+      }];
+      let i = 0;
+      const img = document.querySelector("img");
+      const name = document.querySelector(".name");
+      const note = document.querySelector(".note");
+      const forward = document.querySelector(".forward");
+      const backward = document.querySelector(".backward");
+      forward.addEventListener("click", function () {
+        if (i < team.length-1) {
+          team[i] = team[i++];
+          console.log(i);
+          print();
+        } 
+      });
+      backward.addEventListener("click", function () {
+        if (i >0) {
+          team[i] = team[i--];
+          console.log(i);
+          print();
+        }
+      });
+
+function print(){
+      name.innerHTML = team[i].name;
+      img.setAttribute("src", team[i].img);
+      note.innerHTML = team[i].note;
+    }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+            background: dimgray;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+    
+        h1{
+            font-size: 60px;
+            font-weight: 700;
+        }
+        .count{
+            font-size: 110px;
+            font-family: cursive;
+            color: rgb(0, 255, 0);
+        }#btn1{
+            background: red;
+        }
+        button{
+            height: 2rem;
+            width: 7rem;
+            border-radius: 10px;
+            font-weight: 400;
+            
+        }
+        #btn1{
+            background: red;
+        }
+        #btn2{
+            background: yellow;
+        }
+        #btn3{
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="logo">Counter</h1>
+    <div class="container">
+    <h1 class="count" >0</h1>
+        <button id="btn1">DECREMENT</button>
+        <button id="btn2">RESET</button>
+        <button id="btn3">INCREMENT</button>
+    </div>
+
+    <script type="text/javascript">
+        let num = 0;
+        const increment = document.getElementById('btn3');
+        const decrement = document.getElementById('btn1');
+        const reset = document.getElementById('btn2');
+        const count = document.querySelector(".count");
+        increment.addEventListener("click", function(){
+            num++;
+            count.innerHTML= num;
+        });
+        decrement.addEventListener("click", function(){
+            num--;
+            count.innerHTML= num;
+        });
+        reset.addEventListener("click", function(){
+            num = 0;
+            count.innerHTML= num;
+        });
+
+        
+
+
+</script>
+</body>
+</html>
